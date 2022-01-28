@@ -1,0 +1,34 @@
+﻿@model Makale.Models.Siniflar.MakaleData
+@{
+    ViewBag.Title = "MakaleEkle";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+<style>
+    *{
+        color:white;
+    }
+    .textbox{
+        color:black !important
+    }
+</style>
+<br />
+<h2>Yeni Makale Ekle</h2>
+<br />
+<form class="form-group" method="post">
+    <div class="d-flex justify-content-around mb-5" >
+        <div>
+            @Html.LabelFor(x => x.MakaleAd)
+            @Html.TextBoxFor(x => x.MakaleAd, new { @class = "textbox" })
+        </div>
+        <div>
+            @Html.LabelFor(x => x.MakaleTür)
+            @Html.TextBoxFor(x => x.MakaleTür, new { @class = "textbox" })
+        </div>
+       
+    </div>
+   
+    @Html.LabelFor(x => x.MakaleText)
+    @Html.TextAreaFor(x => x.MakaleText, new { @class = "form-control" })
+    <button class="btn btn-warning">Kaydet</button>
+</form>
+
