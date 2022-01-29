@@ -1,0 +1,30 @@
+﻿@model Makale.Models.Siniflar.MakaleData
+@{
+    ViewBag.Title = "MakaleGüncelle";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+<br />
+<h2>MakaleGüncelle</h2>
+<br />
+@using (Html.BeginForm("MakaleGüncelleKaydet", "Makale", FormMethod.Post)) 
+ {
+    <div class="form-group d-flex justify-content-around">
+        <div>
+            @Html.LabelFor(x => x.MakaleAd)
+            @Html.TextBoxFor(x => x.MakaleAd)
+        </div>
+        <div>
+            @Html.LabelFor(x => x.MakaleTür)
+            @Html.TextBoxFor(x => x.MakaleTür)
+        </div>
+       
+    </div>
+    <div class="form-group">
+        @Html.LabelFor(x => x.MakaleText)
+        @Html.TextAreaFor(x => x.MakaleText, new { @class = "form-control" })
+        @Html.HiddenFor(x => x.MakaleID)
+    </div>
+    
+    <button class="btn btn-warning">Güncelle</button>
+ }
+

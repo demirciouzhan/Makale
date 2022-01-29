@@ -393,6 +393,7 @@
     <Content Include="Views\Shared\_AdminLayout.cshtml" />
     <Content Include="Views\Makale\Index.cshtml" />
     <Content Include="Views\Makale\MakaleEkle.cshtml" />
+    <Content Include="Views\Makale\MakaleGüncelle.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

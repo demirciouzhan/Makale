@@ -28,11 +28,28 @@ namespace Makale.Controllers
             c.SaveChanges();
             return RedirectToAction("Index");
         }
-        //public ActionResult MakaleSil(int x)
-        //{
-        //    var mkl = c.Makales.Find(id);
-        //    c.Makales.Remove(mkl);
-            
-        //}
+        public ActionResult MakaleSil(int id)
+        {
+            var mkl = c.Makales.Find(id);
+            c.Makales.Remove(mkl);
+            c.SaveChanges();
+            return RedirectToAction("Index");
+
+        }
+        public ActionResult MakaleGüncelle(int id)
+        {
+            var makale = c.Makales.Find(id);
+            return View("MakaleGüncelle",makale);
+        }
+        public ActionResult MakaleGüncelleKaydet( MakaleData k)
+        {
+            var mkle = c.Makales.Find(k.MakaleID);
+            mkle.MakaleAd = k.MakaleAd;
+            mkle.MakaleTür = k.MakaleTür;
+            mkle.MakaleText = k.MakaleText;
+            c.SaveChanges();
+            return RedirectToAction("Index");
+        }
+
     }
 }

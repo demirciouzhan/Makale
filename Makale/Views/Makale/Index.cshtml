@@ -5,7 +5,7 @@
     Layout = "~/Views/Shared/_AdminLayout.cshtml";
 }
 
-<table class="table table-bordered" style="color:white;width:100%   ; margin-top:40px">
+<table class="table table-bordered" style="color:white;width:100% ; margin-top:40px">
     <tr>
         <td>Makale ADI</td>
         <td>Türü</td>
@@ -23,8 +23,8 @@
             <td style="width:100%">
                 @k.MakaleText
             </td>
-            <td><a class="btn btn-danger" href="#" >Sil</a></td>
-            <td><a class="btn btn-success" href="#">Güncelle</a></td>
+            <td><a class="btn btn-danger" href="/Makale/MakaleSil/@k.MakaleID" >Sil</a></td>
+            <td><a class="btn btn-success" href="/Makale/MakaleGüncelle/@k.MakaleID">Güncelle</a></td>
         </tr>
     }
 </table>
